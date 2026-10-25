@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Attendly",
+    "slug": "Attendly",
+    "scheme": "attendly",
+    "version": "2.1.4",
+    "orientation": "portrait",
+    "icon": "./assets/adaptive-icon.png",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "package": "com.unico.attendly",
+      "versionCode": 19,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon-dark.png",
+          "dark": {
+            "image": "./assets/splash-icon-light.png"
+          },
+          "imageWidth": 200
+        }
+      ],
+      "expo-sqlite",
+      "@react-native-community/datetimepicker",
+      "expo-system-ui",
+      "expo-status-bar"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9e401fb6-814f-4ff8-ab74-dd82d8c75727"
+      }
+    }
+  }
+}
