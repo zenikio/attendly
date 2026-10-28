@@ -15,7 +15,7 @@ const SUPPORT_URL = 'https://razorpay.me/@zenik';
 const Settings = () => {
     const { theme, setTheme } = useThemeStore();
     const colors = useThemeColor();
-    const { target, setTarget, showAbsent, setShowAbsent } = useSettingsStore();
+    const { target, setTarget, showAbsent, setShowAbsent, showSubjectAdvice, setShowSubjectAdvice } = useSettingsStore();
     const router = useRouter();
 
     const handleThemeChange = (newTheme) => {
@@ -91,6 +91,22 @@ const Settings = () => {
                     </Text>
                 </View>
                 <CounterInput label="Target Percentage" value={target} onValueChange={setTarget} min={1} max={100} />
+                <View className="mx-4 mb-4 p-4 bg-card rounded-2xl border border-border flex-row items-center justify-between">
+                    <View className="flex-1 mr-4">
+                        <Text className="text-base font-outfit-semibold text-text">
+                            Per-subject advice
+                        </Text>
+                        <Text className="text-sm font-outfit-regular text-muted mt-1 leading-5">
+                            Show "Can miss" / "Attend more" on each subject. Turn off if only overall attendance matters.
+                        </Text>
+                    </View>
+                    <Switch
+                        trackColor={{ false: colors.border, true: colors.primary }}
+                        thumbColor="#ffffff"
+                        onValueChange={setShowSubjectAdvice}
+                        value={showSubjectAdvice}
+                    />
+                </View>
                 <View className="mx-4 mb-2 p-4 bg-card rounded-2xl border border-border flex-row items-center justify-between">
                     <View className="flex-1 mr-4">
                         <Text className="text-base font-outfit-semibold text-text">

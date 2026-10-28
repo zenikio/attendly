@@ -39,6 +39,9 @@ Run through these one by one on a real Android device (`npx expo start`, open in
 - [ ] Fixed Total subjects still show attended / total
 - [ ] Toggle off: back to attended / total
 
+- [ ] Per-subject advice is off by default: cards and the detail screen show no "Can miss / Attend more"; the Hero message and What If still show
+- [ ] Settings > Per-subject advice on: advice appears on cards and the detail screen
+
 ## 7. Subject detail
 - [ ] Tap a subject: detail opens with the right numbers and advice
 - [ ] Lower "Classes Held" below "Classes Attended": attended follows down, no stuck buttons

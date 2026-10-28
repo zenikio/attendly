@@ -25,6 +25,7 @@ const SubjectDetail = () => {
     const router = useRouter();
     const colors = useThemeColor();
     const target = useSettingsStore(state => state.target);
+    const showSubjectAdvice = useSettingsStore(state => state.showSubjectAdvice);
     const initialSubject = useMemo(() => {
         try {
             return params.subject ? JSON.parse(params.subject) : null;
@@ -252,10 +253,12 @@ const SubjectDetail = () => {
                         >
                             {attendancePercentage}%
                         </Text>
-                        <AdviceText
-                            className="mt-2 text-base"
-                            advice={getAdvice({ attended: classesAttended, total: totalClasses, isFixed: isFixedTotal, target })}
-                        />
+                        {showSubjectAdvice && (
+                            <AdviceText
+                                className="mt-2 text-base"
+                                advice={getAdvice({ attended: classesAttended, total: totalClasses, isFixed: isFixedTotal, target })}
+                            />
+                        )}
                     </View>
                 </View>
 

@@ -8,8 +8,10 @@ const useSettingsStore = create(
         (set) => ({
             target: DEFAULT_TARGET,
             showAbsent: false,
+            showSubjectAdvice: false,
             setTarget: (target) => set({ target }),
             setShowAbsent: (showAbsent) => set({ showAbsent }),
+            setShowSubjectAdvice: (showSubjectAdvice) => set({ showSubjectAdvice }),
         }),
         {
             name: 'attendly-settings-storage',

@@ -14,6 +14,7 @@ const CourseCard = ({ subject }) => {
     const { id, name, total, attended, is_fixed_total } = subject
     const target = useSettingsStore(state => state.target)
     const showAbsent = useSettingsStore(state => state.showAbsent)
+    const showSubjectAdvice = useSettingsStore(state => state.showSubjectAdvice)
     const colors = useThemeColor()
     const swipeableRef = useRef(null)
 
@@ -103,10 +104,12 @@ const CourseCard = ({ subject }) => {
                                         {attendancePercentage}%
                                     </Text>
                                 </View>
-                                <AdviceText
-                                    className="mt-1.5 text-xs"
-                                    advice={getAdvice({ attended, total, isFixed: is_fixed_total === 1, target })}
-                                />
+                                {showSubjectAdvice && (
+                                    <AdviceText
+                                        className="mt-1.5 text-xs"
+                                        advice={getAdvice({ attended, total, isFixed: is_fixed_total === 1, target })}
+                                    />
+                                )}
                             </View>
                             <View className="items-center bg-primary/10 rounded-xl px-3 py-2 min-w-[56px]">
                                 <Text className="text-xl font-outfit-extrabold text-primary">

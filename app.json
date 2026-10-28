@@ -3,7 +3,7 @@
     "name": "Attendly",
     "slug": "Attendly",
     "scheme": "attendly",
-    "version": "2.1.4",
+    "version": "2.2.0",
     "orientation": "portrait",
     "icon": "./assets/adaptive-icon.png",
     "userInterfaceStyle": "automatic",
